@@ -32,7 +32,6 @@ JARVIS is designed to interact with your desktop and perform actions such as:
 * Navigating the filesystem
 * Performing automated computer tasks
 
-> 🚧 Computer-control capabilities are currently under active development.
 
 ### 🧩 Modular Architecture
 
