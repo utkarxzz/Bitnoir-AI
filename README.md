@@ -21,8 +21,8 @@ python --version
 In Terminal, run:
 
 ```bash
-git clone https://github.com/MAL19INDUSTRIES/JARVIS-OS-V.2.git
-cd JARVIS-OS-V.2
+git clone https://github.com/utkarxzz/JARVIS
+cd JARVIS
 python scripts/setup_jarvis.py
 ```
 
