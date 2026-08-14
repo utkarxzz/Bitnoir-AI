@@ -1,102 +1,377 @@
-# JARVIS
+# 🤖 JARVIS — Your Personal AI Assistant
 
-Local Gemini Live desktop assistant with a PyQt6 interface, voice interaction, detachable panels, and optional browser, file, screen, and messaging tools.
+> **An intelligent, extensible AI assistant built to interact with your computer, understand natural language, and execute tasks through a modular architecture.**
 
-JARVIS also includes a dedicated presentation studio that creates, edits,
-redesigns, and extends editable widescreen `.pptx` decks from documents, data,
-images, audio, and video, with optional PDF export. See the
-[usage guide](docs/USAGE.md#6-powerpoint-presentations) for examples.
+JARVIS is a personal AI assistant designed to bring **AI-powered computer interaction** to your Linux desktop.
 
-## Requirements
+Instead of simply answering questions, JARVIS is being built to **understand what you want, decide what needs to be done, and interact with your system to perform tasks**.
 
-You need **Python 3.11 or newer** installed to set up and run JARVIS. Confirm
-your Python version before continuing:
+The goal is simple:
 
-```bash
-python --version
+**Talk to your computer. Let JARVIS handle the rest.**
+
+---
+
+## ✨ Features
+
+### 🧠 AI-Powered Intelligence
+
+* Natural-language interaction
+* Understands user commands
+* AI-powered responses
+* Designed for future agentic task execution
+* Extensible AI backend
+
+### 🖥️ Computer Control
+
+JARVIS is designed to interact with your desktop and perform actions such as:
+
+* Launching applications
+* Opening files and folders
+* Executing system commands
+* Navigating the filesystem
+* Performing automated computer tasks
+
+> 🚧 Computer-control capabilities are currently under active development.
+
+### 🧩 Modular Architecture
+
+JARVIS is structured to make new capabilities easy to add.
+
+```text
+JARVIS
+│
+├── AI / Brain
+├── Command Processing
+├── System Control
+├── Application Control
+├── File Management
+├── Automation
+└── User Interface
 ```
 
-## Quick start (Windows, macOS, Linux)
+This modular approach allows individual components to evolve without rebuilding the entire assistant.
 
-In Terminal, run:
+---
+
+# 🚀 Vision
+
+Most assistants are designed around a simple loop:
+
+```text
+User → Ask Question → AI → Answer
+```
+
+JARVIS aims to move toward:
+
+```text
+User
+  ↓
+Natural Language Command
+  ↓
+JARVIS Brain
+  ↓
+Understand Intent
+  ↓
+Create Action Plan
+  ↓
+Interact With Computer
+  ↓
+Complete Task
+```
+
+The long-term goal is to create an assistant that doesn't just **tell you how to do something** — it can actually **do it for you**.
+
+---
+
+# 🏗️ Architecture
+
+JARVIS follows a modular architecture where different systems handle different responsibilities.
+
+```text
+                    ┌─────────────────┐
+                    │      USER       │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │ Command Handler │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   JARVIS Brain  │
+                    │   AI / Intent   │
+                    └────────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+        ┌──────────┐   ┌───────────┐   ┌──────────┐
+        │   Apps   │   │   Files   │   │  System  │
+        └──────────┘   └───────────┘   └──────────┘
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                    ┌─────────────────┐
+                    │    Execution    │
+                    └─────────────────┘
+```
+
+---
+
+# 📁 Project Structure
+
+```text
+JARVIS/
+│
+├── scripts/
+│   └── setup_jarvis.py
+│
+├── jarvis/
+│   ├── core/
+│   ├── ai/
+│   ├── system/
+│   ├── automation/
+│   └── ...
+│
+├── tests/
+│
+├── README.md
+├── LICENSE
+├── pyproject.toml
+├── requirements.txt
+└── .gitignore
+```
+
+> The structure may evolve as new JARVIS modules are introduced.
+
+---
+
+# ⚙️ Installation
+
+## 1. Clone the repository
 
 ```bash
-git clone https://github.com/utkarxzz/JARVIS
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 cd JARVIS
-python scripts/setup_jarvis.py
 ```
 
-On Windows, you can double-click `scripts/setup_jarvis.bat` instead.
-
-Open `.env`, add your `GEMINI_API_KEY`, then launch JARVIS:
-
-```bash
-jarvis
-```
-
-You only need to run setup once. Activate `.venv` when opening a new terminal,
-then type `jarvis`.
-
-JARVIS's core UI, Gemini connection, presentations, research, files, and CLI are
-cross-platform. Some computer-control, email, media, and browser integrations
-depend on permissions and available applications on each operating system.
-
-## Manual setup
+## 2. Create a virtual environment
 
 ```bash
 python3 -m venv .venv
+```
+
+Activate it:
+
+```bash
 source .venv/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
-cp .env.example .env
-./scripts/install_jarvis_cli.sh
+```
+
+## 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or, if the project is packaged:
+
+```bash
+pip install .
+```
+
+## 4. Run the setup script
+
+```bash
+python3 scripts/setup_jarvis.py
+```
+
+---
+
+# ▶️ Usage
+
+After installation, start JARVIS using the project's entry point.
+
+Example:
+
+```bash
 jarvis
 ```
 
-Set `GEMINI_API_KEY` in `.env` before launch. Optional settings such as voice and local API keys are documented in `.env.example`.
+You can then interact with JARVIS using natural-language commands.
 
-### Launch with `jarvis`
+Example commands:
 
-The CLI launcher is included in this repository. After cloning and completing
-the one-time setup, install it for your user with:
-
-```bash
-./scripts/install_jarvis_cli.sh
+```text
+Open Firefox
+Open my Downloads folder
+Search for a file
+Run a terminal command
+Show system information
 ```
 
-Open a new terminal (or reload your shell profile), then start JARVIS with:
+> Available commands depend on the modules currently enabled in your installation.
+
+---
+
+# 🔐 Security
+
+Because JARVIS can interact with the operating system, security is an important part of the project.
+
+JARVIS should follow these principles:
+
+* Never execute unknown commands blindly
+* Validate potentially dangerous actions
+* Keep API keys outside the source code
+* Avoid exposing sensitive system information
+* Use explicit permissions for powerful operations
+* Keep automation actions auditable
+
+For development, always review commands before granting JARVIS additional system permissions.
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology          | Purpose                       |
+| ------------------- | ----------------------------- |
+| 🐍 Python           | Core development              |
+| 🤖 AI / LLM         | Natural-language intelligence |
+| 🐧 Linux            | Primary operating environment |
+| ⚙️ Shell            | System interaction            |
+| 📦 Python Packaging | Installation & distribution   |
+| 🔧 Git              | Version control               |
+
+---
+
+# 🗺️ Roadmap
+
+### ✅ Foundation
+
+* [x] Basic JARVIS project structure
+* [x] Python-based architecture
+* [x] Installation/setup system
+* [x] Command processing foundation
+
+### 🚧 Currently Working On
+
+* [x] Reliable application launching
+* [ ] Better computer-control capabilities
+* [x] File and folder interaction
+* [ ] Improved command recognition
+* [x] System automation
+* [x] Better error handling
+
+### 🔮 Future
+
+* [x] Voice input
+* [x] Voice responses
+* [ ] Wake-word detection
+* [ ] Multi-step autonomous tasks
+* [x] Persistent memory
+* [x] Desktop GUI
+* [x] Plugin system
+* [x] Advanced system automation
+* [x] Agentic task planning
+* [x] Local/offline AI support
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+If you have an idea, bug fix, feature, or improvement:
+
+1. Fork the repository
+2. Create a new branch
 
 ```bash
-jarvis
+git checkout -b feature/my-feature
 ```
 
-Alternatively, from an activated virtual environment, `python3 -m pip install -e .`
-installs the same `jarvis` command through the standard Python package entry point.
+3. Make your changes
+4. Test them
+5. Commit your changes
 
-## Documentation
+```bash
+git commit -m "Add my feature"
+```
 
-- [Usage guide](docs/USAGE.md)
-- [Tutorial](docs/TUTORIAL.md)
-- [Complete QA and bug-audit guide](docs/QA.md)
-- [Contribution notes](CONTRIBUTING.md)
+6. Push the branch
 
-## Configuration files
+```bash
+git push origin feature/my-feature
+```
 
-Template files are included for local setup:
+7. Open a Pull Request
 
-- `.env.example`
-- `config/api_keys.example.json`
-- `config/layout_settings.example.json`
-- `config/ui_settings.example.json`
-- `memory/long_term.example.json`
-- `memory/task_history.example.json`
+---
 
-## Publishing checklist
+# 🐛 Issues & Suggestions
 
-- Keep `.env` and local secret files out of git.
-- Do not commit `memory/long_term.json` or `config/api_keys.json`.
-- Run `python3 -m py_compile main.py ui.py` before tagging a release.
+Found a bug or have an idea?
 
-## License
+Open an issue and describe:
 
-MIT License, see [LICENSE](LICENSE).
+* What happened
+* What you expected
+* Steps to reproduce
+* Your operating system
+* Relevant logs/errors
+
+This helps make JARVIS better for everyone.
+
+---
+
+# 🌟 Why JARVIS?
+
+JARVIS isn't meant to be another chatbot.
+
+It's an experiment in building a **personal AI agent that can understand the user and interact with the machine itself**.
+
+The project is focused on gradually moving from:
+
+> **AI that talks**
+
+to
+
+> **AI that understands**
+
+and eventually:
+
+> **AI that acts.**
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the `LICENSE` file for details.
+
+---
+
+# 👨‍💻 Author
+
+**Utkarsh Tiwari**
+
+Building JARVIS as an open-source experiment in **AI agents, automation, and human-computer interaction**.
+
+---
+
+## ⭐ Support the Project
+
+If you find JARVIS interesting:
+
+⭐ Star the repository
+🐛 Report bugs
+💡 Suggest features
+🤝 Contribute
+📢 Share the project
+
+Every contribution helps JARVIS become smarter, more capable, and more useful.
+
+---
+
+> **JARVIS — Don't just ask your computer. Talk to it. 🤖**
