@@ -1,127 +1,168 @@
 # 🤖 JARVIS
 
-### Your AI-Powered Desktop Assistant
+### **Understand. Plan. Act.**
 
-> **JARVIS is an AI-powered desktop assistant designed to understand natural language, plan tasks, interact with your computer, manage memory, and execute actions through an extensible agent architecture.**
+> **An AI-powered desktop assistant that turns natural-language intent into planned, executable computer actions.**
 
-JARVIS is built around a simple idea:
-
-**Instead of only telling you what to do, JARVIS should be able to understand the task and help execute it.**
-
-It combines an AI reasoning layer, task planning, execution, memory, system awareness, APIs, and a desktop UI into one modular assistant.
-
----
-
-## ✨ What is JARVIS?
-
-JARVIS is a personal AI assistant for desktop environments.
-
-You can interact with it using **natural-language and voice commands**, while its agent system handles the process of understanding the request, planning the required actions, and executing them through available system capabilities.
-
-The project is designed to evolve from a simple AI assistant into a more capable **agentic desktop automation system**.
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python\&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![AI](https://img.shields.io/badge/AI-Gemini-orange)](https://ai.google.dev/)
+[![Status](https://img.shields.io/badge/Status-Active%20Development-yellow)]()
 
 ---
 
-# ⚡ Core Capabilities
+## 🚀 What is JARVIS?
 
-### 🧠 AI Intelligence
+**JARVIS is more than a chatbot.**
 
-JARVIS uses an AI-driven core to understand user requests and generate useful responses and actions.
+It is an AI-powered desktop assistant designed to understand natural-language goals, plan tasks, interact with the computer, manage memory, and execute actions through a modular agent architecture.
 
-The project includes:
-
-* Gemini Live integration
-* Natural-language command understanding
-* AI-powered task reasoning
-* Prompt-based assistant behavior
-* API-key validation
-* QA and audit utilities
-
----
-
-### 🤖 Agent System
-
-The `agent/` module forms the task-execution layer of JARVIS.
-
-It contains:
-
-* **Planner** — breaks requests into executable tasks
-* **Executor** — handles task execution
-* **Task Queue** — manages pending operations
-* **Error Handler** — manages execution failures
-
-This creates an agent workflow:
+Traditional AI:
 
 ```text
-User Request
-     ↓
-   Planner
-     ↓
-   Task Queue
-     ↓
-   Executor
-     ↓
+User → Question → AI → Answer
+```
+
+JARVIS aims for:
+
+```text
+User
+  ↓
+Natural-Language Goal
+  ↓
+Understand
+  ↓
+Plan
+  ↓
+Queue Tasks
+  ↓
+Execute
+  ↓
+Return Result
+```
+
+The goal is to move from **AI that talks** to **AI that can act**.
+
+---
+
+# ✨ Features
+
+## 🧠 AI Intelligence
+
+JARVIS uses an AI-powered core with Gemini integration to understand and process natural-language requests.
+
+Current architecture includes:
+
+* Gemini Live integration
+* Natural-language interaction
+* AI-powered reasoning
+* Prompt-based assistant behavior
+* API-key validation
+* Secret management
+* QA and auditing utilities
+
+---
+
+## 🤖 Agentic Task System
+
+The `agent/` layer handles task planning and execution.
+
+```text
+agent/
+├── planner.py
+├── executor.py
+├── task_queue.py
+└── error_handler.py
+```
+
+### Planner
+
+Converts a high-level request into executable tasks.
+
+### Task Queue
+
+Manages tasks waiting for execution.
+
+### Executor
+
+Carries out available actions.
+
+### Error Handler
+
+Handles failures during execution and provides a foundation for task recovery.
+
+### Agent Flow
+
+```text
+User Goal
+    ↓
+ Planner
+    ↓
+Task Queue
+    ↓
+ Executor
+    ↓
 System Action
-     ↓
-   Result
+    ↓
+ Result
 ```
 
 ---
 
-### 🖥️ Desktop Interaction
+# 🖥️ Desktop Interaction
 
-JARVIS is designed to interact with the user's computer rather than remaining limited to conversation.
+JARVIS is designed to work with the computer itself rather than being limited to conversation.
 
-Its intended capabilities include:
+The project targets:
 
 * Application interaction
 * File and folder operations
-* System-level actions
+* System actions
 * Desktop automation
 * Web-related tasks
-* Multi-step task execution
+* Multi-step workflows
 
-The system is continuously being expanded with additional computer-control capabilities.
+> 🚧 Desktop capabilities are actively evolving as new actions are added.
 
 ---
 
-### 🧠 Memory
+# 🧠 Memory System
 
-JARVIS includes a dedicated `memory/` system.
-
-It provides components for:
-
-* Answer caching
-* Long-term memory
-* Task history
-* Memory management
-* Configuration management
-
-This allows JARVIS to maintain useful context beyond a single interaction.
+JARVIS includes a dedicated memory layer.
 
 ```text
 memory/
 ├── answer_cache.py
+├── config_manager.py
 ├── memory_manager.py
 ├── task_history.py
-├── config_manager.py
 ├── long_term.example.json
 └── task_history.example.json
 ```
 
+The memory architecture provides foundations for:
+
+* Answer caching
+* Long-term memory
+* Task history
+* Context management
+* Configuration management
+
+This allows JARVIS to evolve toward more contextual interactions.
+
 ---
 
-### 👁️ System Awareness
+# 👁️ System Awareness
 
-JARVIS includes an awareness layer designed to provide information about the environment in which it is running.
+JARVIS contains an awareness layer for interacting with and understanding its runtime environment.
 
-The repository also contains graphics-capability and awareness-related components that can be extended as the assistant becomes more system-aware.
+The project also includes graphics-capability detection and related awareness components.
 
 ---
 
-### 🌐 API Layer
+# 🌐 API Layer
 
-JARVIS includes an API layer for exposing assistant functionality and system status.
+JARVIS contains an API layer:
 
 ```text
 api/
@@ -129,15 +170,15 @@ api/
 └── status.py
 ```
 
-This makes it possible to build additional clients, integrations, or interfaces around the JARVIS core.
+This provides a foundation for exposing JARVIS functionality and system status to other interfaces or integrations.
 
 ---
 
-### 🖥️ User Interface
+# 🖥️ User Interface
 
-The repository includes a dedicated UI layer that provides an interface for interacting with JARVIS.
+JARVIS includes a dedicated user interface and CLI.
 
-The CLI is also exposed through the Python package configuration:
+After installation, the CLI can be launched using:
 
 ```bash
 jarvis
@@ -147,53 +188,50 @@ jarvis
 
 # 🏗️ Architecture
 
-JARVIS is organized as a collection of independent modules rather than one large monolithic assistant.
-
 ```text
-                         ┌──────────────────┐
-                         │       USER       │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-                         ┌──────────────────┐
-                         │    UI / CLI      │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-                         ┌──────────────────┐
-                         │   JARVIS CORE    │
-                         │ AI / Live Model  │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-                         ┌──────────────────┐
-                         │      AGENT       │
-                         │                  │
-                         │     Planner      │
-                         │       ↓          │
-                         │    Task Queue    │
-                         │       ↓          │
-                         │    Executor      │
-                         └────────┬─────────┘
-                                  │
-             ┌────────────────────┼────────────────────┐
-             ▼                    ▼                    ▼
-      ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-      │   SYSTEM     │     │    MEMORY    │     │     API      │
-      │   ACTIONS    │     │    & CACHE   │     │   SERVICES   │
-      └──────────────┘     └──────────────┘     └──────────────┘
-                                  │
-                                  ▼
-                         ┌──────────────────┐
-                         │      RESULT      │
-                         └──────────────────┘
+                         ┌────────────────────┐
+                         │        USER        │
+                         └─────────┬──────────┘
+                                   │
+                                   ▼
+                         ┌────────────────────┐
+                         │     UI / CLI       │
+                         └─────────┬──────────┘
+                                   │
+                                   ▼
+                         ┌────────────────────┐
+                         │    JARVIS CORE     │
+                         │   AI / Live Model  │
+                         └─────────┬──────────┘
+                                   │
+                                   ▼
+                         ┌────────────────────┐
+                         │       AGENT        │
+                         │                    │
+                         │      Planner       │
+                         │         ↓          │
+                         │    Task Queue      │
+                         │         ↓          │
+                         │      Executor      │
+                         └─────────┬──────────┘
+                                   │
+              ┌────────────────────┼────────────────────┐
+              ▼                    ▼                    ▼
+       ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+       │    ACTIONS   │     │    MEMORY    │     │     API      │
+       │    SYSTEM    │     │ & TASK DATA  │     │   SERVICES   │
+       └──────────────┘     └──────────────┘     └──────────────┘
+              │                    │                    │
+              └────────────────────┼────────────────────┘
+                                   ▼
+                         ┌────────────────────┐
+                         │       RESULT       │
+                         └────────────────────┘
 ```
 
 ---
 
 # 📁 Project Structure
-
-The current repository is organized around these major components:
 
 ```text
 JARVIS/
@@ -208,6 +246,10 @@ JARVIS/
 │   ├── server.py
 │   └── status.py
 │
+├── actions/
+├── awarness/
+├── config/
+│
 ├── core/
 │   ├── api_key_validator.py
 │   ├── graphics_capability.py
@@ -218,6 +260,8 @@ JARVIS/
 │   ├── qa_report.py
 │   └── secret_store.py
 │
+├── docs/
+│
 ├── memory/
 │   ├── answer_cache.py
 │   ├── config_manager.py
@@ -226,12 +270,9 @@ JARVIS/
 │   ├── long_term.example.json
 │   └── task_history.example.json
 │
-├── config/
-├── actions/
-├── awareness/
-├── docs/
 ├── scripts/
 ├── tests/
+├── assets/
 │
 ├── main.py
 ├── ui.py
@@ -246,92 +287,35 @@ JARVIS/
 
 ---
 
-# 🛠️ Technology
+# ⚡ Quick Start
 
-| Technology            | Role                   |
-| --------------------- | ---------------------- |
-| 🐍 Python 3.11+       | Core application       |
-| 🤖 Gemini Live        | AI interaction         |
-| 🧠 Agent Architecture | Planning & execution   |
-| 💾 Memory System      | Context & task history |
-| 🌐 API Layer          | Services & status      |
-| 🖥️ Desktop UI        | User interaction       |
-| ⚙️ Python Packaging   | Installation & CLI     |
-| 🔧 Git                | Version control        |
+## 🚀 One-Command Setup
 
-The package metadata identifies the project as `jarvis-mark-xxxix`, version `0.1.0`, requiring Python `3.11+`, with `jarvis` mapped to `main:cli_main`.
-
----
-
-# 🚀 Installation
-
-## Requirements
-
-* Python **3.11 or newer**
-* Git
-* A supported desktop environment
-* Required API credentials configured through the project's environment/configuration system
-
----
-
-## 1. Clone the repository
+For Linux/macOS:
 
 ```bash
-git clone https://github.com/utkarxzz/JARVIS.git
-cd JARVIS
+git clone https://github.com/utkarxzz/JARVIS.git && cd JARVIS && python3 -m venv .venv && source .venv/bin/activate && pip install . && python3 scripts/setup_jarvis.py && jarvis
 ```
+
+> **Important:** On first launch, JARVIS may ask for your Gemini API key.
 
 ---
 
-## 2. Create a virtual environment
+# 🔑 Gemini API Key Setup
 
-```bash
-python3 -m venv .venv
-```
+JARVIS requires a Gemini API key for its AI functionality.
 
-Activate it:
+### 1. Get your Gemini API key
 
-### Linux / macOS
+Open the official Google AI Studio API-key page:
 
-```bash
-source .venv/bin/activate
-```
+**[Get Gemini API Key — Google AI Studio](https://aistudio.google.com/apikey?utm_source=chatgpt.com)**
 
-### Windows
-
-```powershell
-.venv\Scripts\activate
-```
+Sign in with your Google account and create an API key.
 
 ---
 
-## 3. Install JARVIS
-
-The project is packaged through `pyproject.toml`.
-
-```bash
-pip install .
-```
-
-The package exposes the `jarvis` command through its configured CLI entry point.
-
----
-
-## 4. Configuration
-
-Create your environment configuration from the provided example:
-
-```bash
-cp .env.example .env
-```
-
-Then configure the required credentials/settings.
-
-**Never commit real API keys or secrets to GitHub.**
-
----
-
-# ▶️ Running JARVIS
+### 2. Launch JARVIS
 
 After installation:
 
@@ -339,109 +323,292 @@ After installation:
 jarvis
 ```
 
-You can also run the main application directly during development:
-
-```bash
-python3 main.py
-```
+When the JARVIS UI asks for the Gemini API key, paste the key you generated from Google AI Studio.
 
 ---
 
-# 💬 Example Interaction
+### 3. Keep your API key private
 
-JARVIS is designed around natural-language interaction.
+**Never share your Gemini API key publicly.**
 
-For example:
+Do not put it inside:
 
-```text
-You:
-Open my file manager.
+* GitHub commits
+* README files
+* Screenshots
+* Source code
+* Public videos
+* Issues or discussions
 
-JARVIS:
-Understood. I'll open the file manager.
-```
+If using an environment configuration, keep it in `.env` and make sure `.env` is ignored by Git.
 
-Or for a multi-step task:
-
-```text
-You:
-Find the project folder and open it.
-
-        ↓
-
-JARVIS Planner
-
-        ↓
-
-Identify project location
-        ↓
-Locate folder
-        ↓
-Execute desktop action
-        ↓
-Return result
-```
-
-The exact capabilities available depend on the current implementation and enabled system actions.
-
----
-
-# 🔐 Security
-
-Because JARVIS can interact with a computer and potentially execute system actions, security is a core consideration.
-
-The project includes dedicated security-related components such as:
-
-* API-key validation
-* Secret storage
-* Error handling
-* QA auditing
-* Configuration management
-
-Sensitive credentials should always remain outside the repository.
+Example:
 
 ```text
 .env
-API Keys
-Secrets
-Tokens
 ```
 
-should never be committed to Git.
+Your repository already provides:
+
+```text
+.env.example
+```
+
+as the template for local configuration.
 
 ---
 
-# 🧪 Quality & Testing
+# 🛠️ Manual Installation
 
-The repository contains dedicated testing and QA infrastructure.
+### Requirements
+
+* Python **3.11+**
+* Git
+* Internet connection
+* Gemini API key
+* Supported desktop environment
+
+### Step 1 — Clone
+
+```bash
+git clone https://github.com/utkarxzz/JARVIS.git
+cd JARVIS
+```
+
+### Step 2 — Create virtual environment
+
+```bash
+python3 -m venv .venv
+```
+
+### Step 3 — Activate
+
+Linux/macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+Windows:
+
+```powershell
+.venv\Scripts\activate
+```
+
+### Step 4 — Install JARVIS
+
+```bash
+pip install .
+```
+
+### Step 5 — Run setup
+
+```bash
+python3 scripts/setup_jarvis.py
+```
+
+### Step 6 — Start
+
+```bash
+jarvis
+```
+
+---
+
+# 💬 Example Workflow
+
+A simple request can follow this flow:
+
+```text
+User:
+Open my project folder.
+
+        ↓
+
+JARVIS understands the request
+
+        ↓
+
+Planner creates the task
+
+        ↓
+
+Task enters queue
+
+        ↓
+
+Executor performs the action
+
+        ↓
+
+JARVIS returns the result
+```
+
+For multi-step tasks:
+
+```text
+User Goal
+    ↓
+Understand
+    ↓
+Plan
+    ↓
+Task 1
+    ↓
+Task 2
+    ↓
+Task 3
+    ↓
+Execute
+    ↓
+Result
+```
+
+---
+
+# 🎯 Hackathon Concept
+
+## From Chatbots to Computer Agents
+
+A chatbot can generate an answer.
+
+An agent can work toward a goal.
+
+JARVIS explores the second approach.
+
+The core concept is:
+
+```text
+                  ┌──────────────┐
+                  │     GOAL     │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │  UNDERSTAND  │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │     PLAN     │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │     ACT      │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │   OBSERVE    │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │   RECOVER    │
+                  └──────┬───────┘
+                         ↓
+                  ┌──────────────┐
+                  │   COMPLETE   │
+                  └──────────────┘
+```
+
+---
+
+# 💡 Why JARVIS?
+
+### 🗣️ Natural Interaction
+
+Users can express goals naturally instead of learning a complicated command system.
+
+### 🧩 Modular Architecture
+
+Planning, execution, memory, API services, awareness, and actions are separated into dedicated components.
+
+### 🔄 Multi-Step Execution
+
+The agent architecture provides a foundation for turning complex goals into multiple executable tasks.
+
+### 🧠 Memory
+
+Task history, memory management, and answer caching provide persistent context capabilities.
+
+### 🖥️ Computer-Centric AI
+
+The project focuses on AI interacting with the computer itself rather than remaining purely conversational.
+
+---
+
+# 🧪 Testing & QA
+
+JARVIS includes testing and QA infrastructure.
 
 ```text
 tests/
 ```
 
-and the core QA components include:
+Core QA components include:
 
 ```text
-qa_audit.py
-qa_mode.py
-qa_report.py
+core/
+├── qa_audit.py
+├── qa_mode.py
+└── qa_report.py
 ```
 
-These components provide a foundation for testing, auditing, and validating JARVIS behavior.
+These provide a foundation for validating and improving assistant behavior.
+
+---
+
+# 🔐 Security
+
+Because JARVIS can interact with the operating system, security is an important consideration.
+
+The project includes:
+
+* API-key validation
+* Secret management
+* Error handling
+* Configuration management
+* QA auditing
+
+### Security Rules
+
+Never commit:
+
+```text
+.env
+API keys
+Access tokens
+Private credentials
+Secrets
+```
+
+If an API key is accidentally exposed, revoke it and create a new one.
+
+---
+
+# 🧰 Tech Stack
+
+| Technology                | Purpose                  |
+| ------------------------- | ------------------------ |
+| 🐍 **Python 3.11+**       | Core application         |
+| 🤖 **Gemini Live**        | AI interaction           |
+| 🧠 **Agent Architecture** | Planning & execution     |
+| 💾 **Memory System**      | Context & task history   |
+| 🌐 **API Layer**          | Services & system status |
+| 🖥️ **Desktop UI**        | User interaction         |
+| ⚙️ **Python Packaging**   | Installation & CLI       |
+| 🔧 **Git**                | Version control          |
 
 ---
 
 # 🗺️ Roadmap
 
-JARVIS is an actively evolving project.
+## ✅ Foundation
 
-### 🔹 Current Direction
-
-* [x] Modular project architecture
+* [x] Modular architecture
 * [x] AI core
+* [x] Gemini integration
 * [x] Agent planner
 * [x] Task executor
 * [x] Task queue
+* [x] Error handling
 * [x] Memory system
 * [x] Task history
 * [x] API layer
@@ -449,70 +616,81 @@ JARVIS is an actively evolving project.
 * [x] CLI entry point
 * [x] QA/audit foundation
 
-### 🔹 Next
+## 🚧 In Development
 
 * [ ] More reliable desktop application control
 * [ ] Expanded system actions
-* [ ] Better multi-step execution
-* [ ] More robust task recovery
+* [ ] Improved multi-step execution
+* [ ] Better task recovery
 * [ ] Improved context handling
 * [ ] More advanced computer awareness
-* [ ] Better autonomous workflows
+* [ ] More autonomous workflows
 
-### 🔮 Long-Term Vision
+## 🔮 Future Vision
 
 ```text
-Assistant
-    ↓
-Understands
-    ↓
-Plans
-    ↓
-Acts
-    ↓
-Observes
-    ↓
-Learns from context
-    ↓
-Completes the task
+AI
+ ↓
+Understand
+ ↓
+Plan
+ ↓
+Act
+ ↓
+Observe
+ ↓
+Learn From Context
+ ↓
+Complete Real-World Tasks
 ```
-
-The ultimate goal is to make JARVIS a capable **personal computer agent** rather than just another chatbot.
 
 ---
 
 # 🤝 Contributing
 
-Contributions, ideas, bug reports, and improvements are welcome.
+Contributions are welcome.
 
-Before contributing, check:
+See:
 
 ```text
 CONTRIBUTING.md
 ```
 
-For major changes, it is recommended to discuss the idea first through an issue.
+Basic workflow:
+
+```bash
+git checkout -b feature/my-feature
+```
+
+Make your changes and test them:
+
+```bash
+git add .
+git commit -m "Add my feature"
+git push origin feature/my-feature
+```
+
+Then open a Pull Request.
 
 ---
 
-# 🐛 Reporting Issues
+# 🐛 Bug Reports
 
-If you find a bug, please include:
+When reporting an issue, include:
 
 * Operating system
 * Python version
 * JARVIS version
-* Command that caused the issue
-* Error message/log
+* Command used
+* Error message
+* Relevant logs
 * Steps to reproduce
-
-This makes debugging much easier.
 
 ---
 
-# 📄 Documentation
+# 📚 Documentation
 
-Additional project documentation can be found in:
+Additional documentation is available in:
 
 ```text
 docs/
@@ -521,57 +699,19 @@ PRODUCT.md
 CONTRIBUTING.md
 ```
 
-These files provide deeper information about the project's design, product direction, and contribution workflow.
-
 ---
 
-# 🌟 Why JARVIS?
+# 👨‍💻 Creator
 
-JARVIS is built around a different idea of what a desktop assistant can be.
-
-A traditional chatbot:
-
-```text
-Question → Answer
-```
-
-JARVIS aims for:
-
-```text
-Goal
- ↓
-Understand
- ↓
-Plan
- ↓
-Execute
- ↓
-Observe
- ↓
-Complete
-```
-
-That shift — from **conversation to action** — is the core idea behind the project.
-
----
-
-# 👨‍💻 Author
-
-**Utkarsh Tiwari**
+## Utkarsh Tiwari
 
 JARVIS is an independent project exploring:
 
-* AI agents
-* Desktop automation
-* Natural-language interfaces
-* Computer interaction
-* Memory systems
-* Task planning
-* AI-assisted workflows
+**AI Agents × Desktop Automation × Human-Computer Interaction**
 
 ---
 
-# 📜 License
+# 📄 License
 
 JARVIS is released under the **MIT License**.
 
@@ -579,22 +719,24 @@ See [`LICENSE`](LICENSE) for details.
 
 ---
 
-## ⭐ Support JARVIS
+# ⭐ Support JARVIS
 
-If you find the project interesting:
+If you like the project:
 
 ⭐ Star the repository
 🐛 Report bugs
-💡 Suggest improvements
+💡 Suggest features
 🤝 Contribute
-📢 Share it with other developers
+📢 Share it
 
 ---
 
-<p align="center">
+<div align="center">
 
-### 🤖 JARVIS
+# 🤖 JARVIS
 
-**Understand. Plan. Act.**
+### **Understand. Plan. Act.**
 
-</p>
+**From AI that talks → to AI that acts.**
+
+</div>
