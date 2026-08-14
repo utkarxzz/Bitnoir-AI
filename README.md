@@ -2,7 +2,7 @@
 
 > **An intelligent, extensible AI assistant built to interact with your computer, understand natural language, and execute tasks through a modular architecture.**
 
-JARVIS is a personal AI assistant designed to bring **AI-powered computer interaction** to your Linux desktop.
+JARVIS is a personal AI assistant designed to bring **AI-powered computer interaction** to your Linux,mac and windows desktop.
 
 Instead of simply answering questions, JARVIS is being built to **understand what you want, decide what needs to be done, and interact with your system to perform tasks**.
 
